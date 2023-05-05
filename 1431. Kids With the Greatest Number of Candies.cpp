@@ -13,3 +13,16 @@ public:
         return ans;
     }
 };
+
+//Alternative Solution
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        vector <bool> ans;
+        int greatest = *max_element(candies.begin(), candies.end());
+        for (auto i : candies){
+            ans.push_back((i+extraCandies>=greatest));
+        }
+        return ans;
+    }
+};
