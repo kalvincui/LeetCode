@@ -1,3 +1,4 @@
+//My original Solution
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
@@ -20,6 +21,27 @@ public:
             pivotindex ++;
         }
         return -1;       
+    }
+};
+
+//My updated Solution
+class Solution {
+public:
+    int pivotIndex(vector<int>& nums) {
+        int leftSum [nums.size()];
+        int total = 0;
+        for (int i = 0; i<nums.size(); i++){
+            total += nums[i];
+            leftSum[i] = total;
+        }
+        int idx = 0;
+        while (idx < nums.size()){
+            if (leftSum[idx] - nums[idx] == total-leftSum[idx]){
+                return idx;
+            }
+            idx++;
+        }
+        return -1;
     }
 };
 
