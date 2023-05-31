@@ -46,3 +46,25 @@ public:
         return (word1freq == word2freq);
     }
 };
+
+
+//Alternative Solution
+class Solution {
+public:
+    bool closeStrings(string word1, string word2) {
+        vector <int> word1freq(26,0), word2freq(26,0);
+        set<char>word1char, word2char;
+        if (word1.size() != word2.size()){
+            return false;
+        }
+        for (int i = 0; i<word1.size(); i++){
+            word1freq[word1[i]-'a']++;
+            word2freq[word2[i] - 'a']++;
+            word1char.insert(word1[i]);
+            word2char.insert(word2[i]);
+        }
+        sort (word1freq.begin(), word1freq.end());
+        sort (word2freq.begin(), word2freq.end());
+        return (word1freq == word2freq && word1char == word2char);
+    }
+};
