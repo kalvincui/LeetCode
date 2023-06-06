@@ -44,6 +44,7 @@ public:
         
         vector<int> res;
         // pair<first, second>: first is frequency,  second is number
+        //By default, priority_queue creates max heap with first element
         priority_queue<pair<int,int>> pq; 
         for(auto it = map.begin(); it != map.end(); it++){
             pq.push(make_pair(it->second, it->first));
