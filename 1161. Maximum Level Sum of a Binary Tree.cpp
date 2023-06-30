@@ -11,9 +11,9 @@
  */
 class Solution {
 public:
-    int max = INT_MIN;
-    int maxLevel = 0;
     int maxLevelSum(TreeNode* root) {
+        int max = INT_MIN;
+        int maxLevel = 0;
         queue <TreeNode*> q;
         q.push(root);
         int level = 0;
