@@ -1,3 +1,4 @@
+class Solution {
 public:
     int reverse(int x) {
         int output = 0;
@@ -15,3 +16,4 @@ public:
         }
         return output;
     }
+};
