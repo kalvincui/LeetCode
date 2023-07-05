@@ -14,3 +14,26 @@ public:
         return indices;
     }
 };
+
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        multimap <int, int> dictionary;
+        for (int i = 0; i<nums.size(); i++){
+            dictionary.insert ({nums[i], i});
+        }
+        for (int i = 0; i<nums.size(); i++){
+            int findNum = target - nums[i];
+            for (auto itr = dictionary.find(findNum); itr!=dictionary.end(); itr++){
+                if (itr->first != findNum){
+                    break;
+                }
+                if (itr->second != i){
+                    return {i, itr->second};
+                }
+            }
+        }
+        return {-1,-1};
+    }
+};
