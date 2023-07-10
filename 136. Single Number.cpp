@@ -10,7 +10,6 @@ public:
                 return nums[i];
             }
         }
-        cout << nums[nums.size()-1];
         return nums[nums.size()-1];
     }
 };
