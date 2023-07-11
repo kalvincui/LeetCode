@@ -104,3 +104,30 @@ public:
         return false;      
     }
 };
+
+
+
+
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        //Two pointers, one keeping track of s index and one for t index
+        //Nested while loops, iterating through s, with inner while loop for t
+        int s_index = 0;
+        int t_index = 0;
+        while (s_index < s.size()){
+            if (t_index >= t.size()){
+                return false;
+            }
+            while (t_index < t.size()){
+                if (s[s_index] == t[t_index]){
+                    break;
+                }
+                t_index++;
+            }
+            t_index++;
+            s_index++;
+        }
+        return t_index <= t.size();
+    }
+};
