@@ -28,3 +28,19 @@ public:
         }
     }
 };
+
+
+
+class Solution {
+public:
+    TreeNode* searchBST(TreeNode* root, int val) {
+        if (root){
+            if (root->val < val){
+                root = searchBST(root->right, val);
+            }else if (root->val > val){
+                root = searchBST(root->left, val);
+            }
+        }
+        return root;
+    }
+};
