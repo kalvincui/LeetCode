@@ -4,7 +4,7 @@ public:
         //Make a priority queue, add all elements in nums into the queue
         //Pop from the queue k times
         //Return q.top()
-        priority_queue <int, vector<int>, less<int>> pq;
+        priority_queue <int> pq;
         for (auto i : nums){
             pq.push(i);
         }
