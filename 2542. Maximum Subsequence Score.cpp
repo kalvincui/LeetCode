@@ -13,17 +13,13 @@ public:
             pq.push(seq[i].second);
             num1sum += seq[i].second;
         }
-        if (num1sum*seq[k-1].first > score){
-            score = num1sum*seq[k-1].first;
-        }
+        score = max (score, num1sum*seq[k-1].first);
         for (int i = k; i<nums1.size(); i++){
             num1sum -= pq.top();
             pq.pop();
             pq.push(seq[i].second);
             num1sum += seq[i].second;
-            if (num1sum*seq[i].first > score){
-                score = num1sum*seq[i].first;
-            }
+            score = max (score, num1sum*seq[i].first);
         }
         return score;
     }
