@@ -60,3 +60,34 @@ public:
         return false;
     }
 };
+
+
+
+//O(n) solution w/o queue
+class Solution {
+public:
+    bool winnerOfGame(string colors) {
+        int alice = 0;
+        int bob = 0;
+        int a = 0;
+        int b = 0;
+        for (int i = 0; i<colors.size(); i++){
+            if (colors[i] == 'A'){
+                a++;
+                b = 0;
+            }else{
+                b++;
+                a = 0;
+            }
+            if (a == 3){
+                alice++;
+                a = 2;
+            }
+            if (b == 3){
+                bob++;
+                b = 2;
+            }
+        }
+        return alice > bob;
+    }
+};
