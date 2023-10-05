@@ -55,7 +55,7 @@ public:
             for (int i = 0; i <s.size()-k+1; i++){
                 int j = i+k-1;
                 if (dp[i+1][j-1] && s[i] == s[j]){
-                    dp[i][j] = true;
+                    dp[i][j] = 1;
                     if (k>length){
                         start = i;
                         length = k;
